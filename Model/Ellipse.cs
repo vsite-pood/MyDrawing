@@ -10,13 +10,16 @@ namespace Vsite.POOD.MyDrowing.Model
     {
         public Ellipse(float left, float top, float width, float height)
         {
-            this.left = left;
-            this.top = top;
-            this.width = width;
-            this.height = height;
+            this.Left = left;
+            this.Top = top;
+            this.Width = width;
+            this.Height = height;
         }
 
-        private float left, top, width, height;
+        public float Left { get; private set; }
+        public float Top{ get; private set; }
+        public float Width{ get; private set; }
+        public float Height { get; private set; }
         public override void Draw(IGraphics graphics)
         {
             graphics.DrawEllipse(this);
