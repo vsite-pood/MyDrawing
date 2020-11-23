@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public interface IGraphics
+    public class Rectangle : Shape, IDrawable
     {
-        void DrawRectangle(Rectangle rectangle);
+        public override void Draw(IGraphics graphics)
+        {
+            graphics.DrawRectangle(this);
+        }
     }
 }
