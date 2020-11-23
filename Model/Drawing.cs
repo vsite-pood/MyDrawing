@@ -28,5 +28,9 @@ namespace Vsite.Pood.MyDrawing.Model
             shapes.Clear();
         }
 
+        public IEnumerable<Shape> Shapes
+        {
+            get { return shapes; }
+        }
     }
 }
