@@ -2,6 +2,6 @@
 {
     public interface IGraphics
     {
-
+        void DrawRectangle(Rectangle rect);
     }
 }
