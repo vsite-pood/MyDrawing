@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public interface IGraphics
+    public class Ellipse : Shape, IDrawable
     {
-        void DrawRectangle(Rectangle rectangle);
-        void DrawEllipse(Ellipse ellipse);
+        public override void Draw(IGraphics graphics)
+        {
+            graphics.DrawEllipse(this);
+        }
     }
 }
