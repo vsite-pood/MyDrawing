@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawing.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="IGraphics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
