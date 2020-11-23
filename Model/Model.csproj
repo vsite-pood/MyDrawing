@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drawing.cs" />
+    <Compile Include="Ellipse.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="IGraphics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

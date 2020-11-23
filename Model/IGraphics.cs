@@ -3,5 +3,6 @@
     public interface IGraphics
     {
         void DrawRectangle(Rectangle rect);
+        void DrawEllipse(Ellipse ellipse);
     }
 }
