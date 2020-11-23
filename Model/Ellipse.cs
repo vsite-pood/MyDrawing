@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    class Ellipse : Shape, IDrawable
+    public class Ellipse : Shape, IDrawable
     {
         public override void Draw(IGraphics graphics)
         {

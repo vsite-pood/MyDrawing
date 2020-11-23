@@ -29,5 +29,10 @@ namespace vsite.pood.MyDrawing.Model
         {
             shapes.Clear();
         }
+
+        public IEnumerable<Shape> Shapes
+        {
+            get { return shapes; }
+        }
     }
 }
