@@ -8,17 +8,17 @@ namespace vsite.pood.MyDrawing.Model
 {
     public class Ellipse : Shape, IDrawable
     {
-        private float left;
-        private float top;
-        private float width;
-        private float height;
+        public float Left { get; private set; }
+        public float Top { get; private set; }
+        public float Width { get; private set; }
+        public float Height { get; private set; }
 
         public Ellipse(float left, float top, float width, float height)
         {
-            this.left = left;
-            this.top = top;
-            this.width = width;
-            this.height = height;
+            Left = left;
+            Top = top;
+            Width = width;
+            Height = height;
         }
         public override void Draw(IGraphics graphics)
         {
