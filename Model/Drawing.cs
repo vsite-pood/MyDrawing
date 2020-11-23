@@ -21,5 +21,7 @@ namespace Vsite.POOD.MyDrowing.Model
         public void Add(Shape s) => shapes.Add(s);
         public void Remove(Shape s) => shapes.Remove(s);
         public void Clear() => shapes.Clear();
+
+        public IEnumerable<Shape> Shapes { get { return shapes; } }
     }
 }
