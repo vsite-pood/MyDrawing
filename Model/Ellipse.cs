@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    public interface IGraphics
+    class Ellipse : Shape, IDrawable
     {
-        void DrawRectangle(Rectangle rect);
-        void DrawEllipse(Ellipse ellipse);
+        public override void Draw(IGraphics graphics)
+        {
+            graphics.DrawEllipse(this);
+        }
     }
 }
