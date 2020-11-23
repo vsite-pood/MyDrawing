@@ -11,7 +11,7 @@ namespace UnitTests
         [TestMethod]
         public void AddMethodAddsRectangleToDrawing()
         {
-            Rectangle rectangle = new Rectangle();
+            Rectangle rectangle = new Rectangle(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(rectangle);
             Assert.IsTrue(drawing.Shapes.Contains(rectangle));
@@ -20,7 +20,7 @@ namespace UnitTests
         [TestMethod]
         public void AddMethodAddsEllipseToDrawing()
         {
-            Ellipse ellipse = new Ellipse();
+            Ellipse ellipse = new Ellipse(10,20,30,40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             Assert.IsTrue(drawing.Shapes.Contains(ellipse));
@@ -29,8 +29,8 @@ namespace UnitTests
         [TestMethod]
         public void AddMethodAddsEllipseAndRectangleToDrawing()
         {
-            Rectangle rectangle = new Rectangle();
-            Ellipse ellipse = new Ellipse();
+            Rectangle rectangle = new Rectangle(10,20,30,40);
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
 
             drawing.Add(rectangle);
@@ -42,7 +42,7 @@ namespace UnitTests
         [TestMethod]
         public void RemoveMethodRemovesShapeFromDrawing()
         {
-            Ellipse ellipse = new Ellipse();
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             Assert.IsTrue(drawing.Shapes.Contains(ellipse));
@@ -53,8 +53,8 @@ namespace UnitTests
         [TestMethod]
         public void ClearMethodRemovesAllShapesFromDrawing()
         {
-            Rectangle rectangle = new Rectangle();
-            Ellipse ellipse = new Ellipse();
+            Rectangle rectangle = new Rectangle(10, 20, 30, 40);
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
 
             drawing.Add(rectangle);
