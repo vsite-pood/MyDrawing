@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    public interface IGraphics
+    public class Rectangle : Shape, IDrawable
     {
-        void DrawRectangle(Rectangle rect);
+        public override void Draw(IGraphics graphics)
+        {
+            graphics.DrawRectangle(this);
+        }
     }
 }
