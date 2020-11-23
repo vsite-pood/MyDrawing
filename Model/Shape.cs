@@ -10,6 +10,6 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         public abstract void Draw(IGraphics graphics);
     
-    
+        
     }
 }

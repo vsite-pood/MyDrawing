@@ -11,7 +11,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void AddMethodAddsRectangleToDrawing()
         {
-            Rectangle rect = new Rectangle();
+            Rectangle rect = new Rectangle(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(rect);
             Assert.IsTrue(drawing.Shapes.Contains(rect));
@@ -19,7 +19,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void AddMethodAddsEllipseToDrawing()
         {
-            Ellipse ellipse = new Ellipse();
+            Ellipse ellipse = new Ellipse(10,20,30,40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             Assert.IsTrue(drawing.Shapes.Contains(ellipse));
@@ -27,8 +27,8 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void AddMethodAddsEllipseAndRectangleToDrawing()
         {
-            Rectangle rect = new Rectangle();
-            Ellipse ellipse = new Ellipse();
+            Rectangle rect = new Rectangle(10, 20, 30, 40);
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             drawing.Add(rect);
@@ -38,7 +38,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void RemoveMethodRemovesShapeFromDrawing()
         {
-            Ellipse ellipse = new Ellipse();
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             Assert.IsTrue(drawing.Shapes.Contains(ellipse));
@@ -49,8 +49,8 @@ namespace Vsite.Pood.MyDrawing.UnitTests
         [TestMethod]
         public void ClearMethodRemovesAllShapesFromDrawing()
         {
-            Rectangle rect = new Rectangle();
-            Ellipse ellipse = new Ellipse();
+            Rectangle rect = new Rectangle(10, 20, 30, 40);
+            Ellipse ellipse = new Ellipse(10, 20, 30, 40);
             Drawing drawing = new Drawing();
             drawing.Add(ellipse);
             drawing.Add(rect);
