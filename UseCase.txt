@@ -1,0 +1,8 @@
+Use case: Create a drawing
+==========================
+
+1.User starts application
+2.User selects which shape (elipse or rectangle wants to place)
+3.User places shape by click
+4.User repeats steps 3-4 for other shapes
+5.User saves drawing to file
