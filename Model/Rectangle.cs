@@ -25,5 +25,11 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             graphics.DrawRectangle(this);
         }
+
+        public override void Move(float dx, float dy)
+        {
+            Left += dx;
+            Top += dy;
+        }
     }
 }
