@@ -10,5 +10,7 @@ namespace Vsite.POOD.MyDrowing.Model
     {
         void DrawRectangle(Rectangle rectangle);
         void DrawEllipse(Ellipse ellipse);
+
+        void DrawHandle(ResizeHandle handle);
     }
 }
