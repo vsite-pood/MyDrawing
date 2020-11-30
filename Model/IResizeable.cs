@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
+	public enum ResizeDirection
+	{
+		North,
+		NorthEast,
+		East,
+		SouthEast,
+		South,
+		SouthWest,
+		West,
+		NorthWest
+	}
 	public interface IResizeable
 	{
-		public enum ResizeDirection
-		{
-			North,
-			NorthEast,
-			East,
-			SouthEast,
-			South,
-			SouthWest,
-			West,
-			NorthWest
-		}
+
 		void Resize(ResizeDirection direction,float dx, float dy);
 	}
 }

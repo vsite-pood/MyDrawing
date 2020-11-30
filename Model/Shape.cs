@@ -10,6 +10,6 @@ namespace Vsite.Pood.MyDrawing.Model
     {
         public abstract void Draw(IGraphics graphics);
 		public abstract void Move(float dx, float dy);
-		public abstract void Resize(IResizeable.ResizeDirection direction, float dx, float dy);
+		public abstract void Resize(ResizeDirection direction, float dx, float dy);
 	}
 }
