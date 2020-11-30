@@ -18,6 +18,6 @@ namespace vsite.pood.MyDrawing.Model
     }
     public interface IResizeable
     {
-        void Resize(ResizeDirection diretion, float dx, float dy);
+        void Resize(ResizeDirection direction, float dx, float dy);
     }
 }
