@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Ellipse : Shape, IDrawable
+    public class Ellipse : Shape, IDrawable, IMovable
     {
         public float Left { get; private set; }
         public float Top { get; private set; }
@@ -24,6 +24,12 @@ namespace Vsite.Pood.MyDrawing.Model
         public override void Draw(IGraphics graphics)
         {
             graphics.DrawEllipse(this);
+        }
+
+        public override void Move(float dx, float dy)
+        {
+            Left += dx;
+            Top += dy;
         }
     }
 }
