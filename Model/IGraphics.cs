@@ -10,5 +10,6 @@ namespace vsite.pood.MyDrawing.Model
     {
         void DrawRectangle(Rectangle rect);
         void DrawEllipse(Ellipse ellipse);
+        void DrawHandle(ResizeHandle handle);
     }
 }
