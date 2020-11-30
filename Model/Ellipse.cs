@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Ellipse : Shape, IDrawable, IMovable
+    public class Ellipse : Shape, IDrawable, IMovable, IResizeble
     {
         public Ellipse(float left, float top, float width, float height)
         {
@@ -25,11 +25,15 @@ namespace Vsite.POOD.MyDrowing.Model
             graphics.DrawEllipse(this);
         }
 
-
         public override void Move(float dx, float dy)
         {
             Left += dx;
             Top += dy;
+        }
+
+        public override void Resize(ResizeDirection direction, float dx, float dy)
+        {
+            throw new NotImplementedException();
         }
     }
 }

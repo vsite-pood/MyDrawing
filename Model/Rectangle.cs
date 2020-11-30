@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Rectangle : Shape, IDrawable, IMovable
+    public class Rectangle : Shape, IDrawable, IMovable, IResizeble
     {
         public Rectangle(float left, float top, float width, float height)
         {
@@ -31,6 +31,11 @@ namespace Vsite.POOD.MyDrowing.Model
         {
             Left += dx;
             Top += dy;
+        }
+
+        public override void Resize(ResizeDirection direction, float dx, float dy)
+        {
+            throw new NotImplementedException();
         }
     }
 }
