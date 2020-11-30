@@ -14,6 +14,7 @@ namespace vsite.pood.MyDrawing.Model
         SouthEast,
         South,
         SouthWest,
+        West,
         NorthWest
     }
     public interface IResizeable
