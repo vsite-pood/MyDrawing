@@ -9,8 +9,8 @@ namespace vsite.pood.MyDrawing.Model
     public class ResizeHandle : IDrawable
     {
         public const float Size = 10;
-        public float X { get; private set }
-        public float Y { get; private set } 
+        public float X { get; private set; }
+        public float Y { get; private set; } 
         public void Draw(IGraphics graphics)
         {
             graphics.DrawHandle(this);
