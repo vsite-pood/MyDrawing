@@ -13,9 +13,9 @@ namespace Vsite.Pood.MyDrawing.Model
         East,
         SouthEast,
         South,
-        SouthWesst,
+        SouthWest,
         West,
-        WestEast
+        NorthWest
     }
     public interface iResizable
     {
