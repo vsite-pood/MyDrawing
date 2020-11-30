@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Rectangle : Shape, IDrawable
+    public class Rectangle : Shape, IDrawable, IMovable
     {
         public Rectangle(float left, float top, float width, float height)
         {
@@ -25,6 +25,12 @@ namespace Vsite.POOD.MyDrowing.Model
         public override void Draw(IGraphics graphics)
         {
             graphics.DrawRectangle(this);
+        }
+
+        public override void Move(float dx, float dy)
+        {
+            Left += dx;
+            Top += dy;
         }
     }
 }
