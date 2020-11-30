@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Vsite.Pood.MyDrawing.Model.IResizeable;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IDrawable,IMovable
+    public class Rectangle : Shape, IDrawable,IMovable,IResizeable
     {
 
         public float Left { get; private set; }
@@ -32,5 +33,10 @@ namespace Vsite.Pood.MyDrawing.Model
             Left += dx;
             Top += dy;
         }
+
+		public override void Resize(ResizeDirection direction, float dx, float dy)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
