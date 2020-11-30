@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IDrawable
+    public class Rectangle : Shape, IDrawable,IMovable
     {
 
         public float Left { get; private set; }
@@ -26,5 +26,11 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             graphics.DrawRectangle(this);
         }
-    }
+
+		public override void Move(float dx, float dy)
+		{
+            Left += dx;
+            Top += dy;
+        }
+	}
 }

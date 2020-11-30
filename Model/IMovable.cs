@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public abstract class Shape : IDrawable,IMovable
-    {
-        public abstract void Draw(IGraphics graphics);
-		public abstract void Move(float dx, float dy);
+	public interface IMovable
+	{
+		void Move(float dx, float dy);
 	}
 }
