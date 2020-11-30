@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IDrawable, IMovable
+    public class Rectangle : Shape, IDrawable, IMovable, IResizable
     {
 
         public float Left { get; private set; }
@@ -31,6 +31,11 @@ namespace Vsite.Pood.MyDrawing.Model
         {
             Left += dx;
             Top += dy;
+        }
+
+        public override void Resize(ResizeDirection direction, float dx, float dy)
+        {
+            throw new NotImplementedException();
         }
     }
 }
