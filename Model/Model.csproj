@@ -49,6 +49,7 @@
     <Compile Include="IBounding.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="IGraphics.cs" />
+    <Compile Include="IHittable.cs" />
     <Compile Include="IMovable.cs" />
     <Compile Include="IResizeable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
