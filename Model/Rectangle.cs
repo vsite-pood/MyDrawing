@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Rectangle : Shape, IDrawable, IMovable, IResizeble, IBounding
+    public class Rectangle : Shape, IDrawable, IMovable, IResizeble, IBounding, IHittable
     {
         public Rectangle(float left, float top, float width, float height)
         {
@@ -23,6 +23,11 @@ namespace Vsite.POOD.MyDrowing.Model
         public float Height { get; private set; }
 
         public override RectangleF BoundingRectangle => new RectangleF(Left, Top, Width, Height);
+
+        public override bool Contains(float x, float y)
+        {
+            return BoundingRectangle.Contains(x, y);
+        }
 
         public override void Draw(IGraphics graphics)
         {

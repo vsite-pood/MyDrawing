@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public abstract class Shape : IDrawable, IMovable, IResizeble, IBounding
+    public abstract class Shape : IDrawable, IMovable, IResizeble, IBounding, IHittable
     {
         public abstract RectangleF BoundingRectangle { get; }
 
+        public abstract bool Contains(float x, float y);
         public abstract void Draw(IGraphics graphics);
         public abstract void Move(float dx, float dy);
         public abstract void Resize(ResizeDirection direction, float dx, float dy);
