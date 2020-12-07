@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using vsite.pood.MyDrawing.Model;
+using Vsite.pood.MyDrawing.Model;
 
-namespace vsite.pood.MyDrawing.UnitTests
+namespace Vsite.pood.MyDrawing.UnitTests
 {
     [TestClass]
     public class TestDrawing

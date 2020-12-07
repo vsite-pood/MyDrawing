@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vsite.pood.MyDrawing.Model
+namespace Vsite.pood.MyDrawing.Model
 {
-    public class Ellipse : Shape, IDrawable, IMoveable, IResizeable, IBounding
+    public class Ellipse : Shape, IDrawable, IMoveable, IResizeable, IBounding, IHitable
     {
         public float Left { get; private set; }
         public float Top { get; private set; }
@@ -36,6 +36,11 @@ namespace vsite.pood.MyDrawing.Model
         public override void Resize(ResizeDirection diretion, float dx, float dy)
         {
             throw new NotImplementedException();
+        }
+
+        public override bool Contains(float x, float y)
+        {
+            return BoundingRectangle.Contains(x, y);
         }
     }
 }

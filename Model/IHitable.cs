@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vsite.pood.MyDrawing.Model
 {
-    public interface IMoveable
+    public interface IHitable
     {
-        void Move(float dx, float dy);
+        bool Contains(float x, float y);
     }
 }
