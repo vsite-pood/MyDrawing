@@ -41,7 +41,7 @@ namespace UnitTests
             sel.Add(rect);
             Shape ellipse = new Vsite.Pood.MyDrawing.Model.Ellipse(50, 50, 100, 50);
             sel.Add(ellipse);
-            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10, 20, 290, 130));
+            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10, 20, 140, 80));
         }
     }
 }

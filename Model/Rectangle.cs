@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IDrawable, iResizable, IBounding
+    public class Rectangle : Shape, IDrawable, iResizable, IBounding, IHittable
     {
         public float Left { get; private set; }
         public float Top { get; private set; }
@@ -37,6 +37,10 @@ namespace Vsite.Pood.MyDrawing.Model
         public override void Resize(ResizeDirection direction, float dx, float dy)
         {
             throw new NotImplementedException();
+        }
+        public override bool Contains(float x, float y)
+        {
+            return BoundingRectangle.Contains(x, y);
         }
     }
 }
