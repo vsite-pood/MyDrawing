@@ -68,7 +68,7 @@ namespace Vsite.Pood.MyDrawing.Model
             handles[ResizeDirection.NorthWest].MoveTo(bounds.Left, bounds.Top);
             handles[ResizeDirection.North].MoveTo(bounds.Left+bounds.Width/2, bounds.Top);
             handles[ResizeDirection.NortEast].MoveTo(bounds.Right, bounds.Top);
-            handles[ResizeDirection.East].MoveTo(bounds.Left, bounds.Top+ bounds.Height/2);
+            handles[ResizeDirection.East].MoveTo(bounds.Right, bounds.Top+ bounds.Height/2);
             handles[ResizeDirection.SouthEast].MoveTo(bounds.Right, bounds.Bottom);
             handles[ResizeDirection.South].MoveTo(bounds.Left+bounds.Width/2, bounds.Bottom);
             handles[ResizeDirection.SouthWest].MoveTo(bounds.Left, bounds.Bottom);
