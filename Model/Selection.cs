@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-	public class Selection : IMovable, IResizeable , IDrawable , IBounding
+	public class Selection : IMovable, IResizeable, IDrawable, IBounding
 	{
 		private readonly List<Shape> shapes = new List<Shape>();
 		private readonly Dictionary<ResizeDirection, ResizeHandle> handles = new Dictionary<ResizeDirection, ResizeHandle>()
 		{
-			{	ResizeDirection.North, new ResizeHandle()	  },
-			{	ResizeDirection.NorthEast, new ResizeHandle() },
-			{	ResizeDirection.East, new ResizeHandle()      },
-			{	ResizeDirection.SouthEast, new ResizeHandle() },
-			{	ResizeDirection.South, new ResizeHandle()     },
-			{	ResizeDirection.SouthWest, new ResizeHandle() },
-			{	ResizeDirection.West, new ResizeHandle()      },
-			{	ResizeDirection.NorthWest,new ResizeHandle()  }
+			{   ResizeDirection.North, new ResizeHandle()     },
+			{   ResizeDirection.NorthEast, new ResizeHandle() },
+			{   ResizeDirection.East, new ResizeHandle()      },
+			{   ResizeDirection.SouthEast, new ResizeHandle() },
+			{   ResizeDirection.South, new ResizeHandle()     },
+			{   ResizeDirection.SouthWest, new ResizeHandle() },
+			{   ResizeDirection.West, new ResizeHandle()      },
+			{   ResizeDirection.NorthWest,new ResizeHandle()  }
 		};
 
 
@@ -55,12 +55,23 @@ namespace Vsite.Pood.MyDrawing.Model
 		{
 			//draw all shapes in selection
 			foreach ( IDrawable shape in shapes )
-				shape.Draw(graphics);
+				shape.Draw( graphics );
 
 			//arrange handles
 			var bounds = BoundingRectangle;
 			bounds.Inflate( ResizeHandle.Size, ResizeHandle.Size );
 			//draw handles
+			handles[ResizeDirection.NorthWest].MoveTo( bounds.Left, bounds.Top );
+			handles[ResizeDirection.North].MoveTo( bounds.Left + bounds.Width / 2, bounds.Top );
+			handles[ResizeDirection.NorthEast].MoveTo( bounds.Right, bounds.Top );
+			handles[ResizeDirection.East].MoveTo( bounds.Right, bounds.Top + bounds.Height / 2 );
+			handles[ResizeDirection.SouthEast].MoveTo( bounds.Right, bounds.Bottom );
+			handles[ResizeDirection.South].MoveTo( bounds.Left + bounds.Width / 2, bounds.Bottom );
+			handles[ResizeDirection.SouthWest].MoveTo( bounds.Left, bounds.Bottom );
+			handles[ResizeDirection.West].MoveTo( bounds.Left, bounds.Top + bounds.Height / 2 );
+			
+			foreach ( var item in handles )
+				graphics.DrawHandle( item.Value );
 		}
 		public RectangleF BoundingRectangle
 		{
