@@ -14,7 +14,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
 			Assert.IsTrue( s1.Contains( 20, 30 ) );
 
 			Shape s2 = new Ellipse( 10, 20, 100, 50 );
-			Assert.IsTrue( s1.Contains( 20, 30 ) );
+			Assert.IsTrue( s2.Contains( 20, 30 ) );
 		}
 		
 		[TestMethod]
@@ -24,7 +24,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
 			Assert.IsFalse( s1.Contains( 120, 30 ) );
 
 			Shape s2 = new Ellipse( 10, 20, 100, 50 );
-			Assert.IsFalse( s1.Contains( 0,0 ) );
+			Assert.IsFalse( s2.Contains( 0,0 ) );
 		}
 	}
 }
