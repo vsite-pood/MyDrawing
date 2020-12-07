@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    public class Ellipse : Shape, IDrawable, IMoveable, IResizeable
+    public class Ellipse : Shape, IDrawable, IMoveable, IResizeable, IBounding
     {
         public float Left { get; private set; }
         public float Top { get; private set; }
         public float Width { get; private set; }
         public float Height { get; private set; }
+        public override RectangleF BoundingRectangle => new RectangleF(Left, Top, Width, Height);
 
         public Ellipse(float left, float top, float width, float height)
         {

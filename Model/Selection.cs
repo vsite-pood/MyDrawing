@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    public class Selection : IMoveable, IResizeable, IDrawable
+    public class Selection : IMoveable, IResizeable, IDrawable, IBounding
     {
         private readonly List<Shape> shapes = new List<Shape>();
         private readonly Dictionary<ResizeDirection, ResizeHandle> handles = new Dictionary<ResizeDirection, ResizeHandle>()
@@ -20,7 +21,7 @@ namespace vsite.pood.MyDrawing.Model
             { ResizeDirection.West, new ResizeHandle() },
             { ResizeDirection.NorthWest, new ResizeHandle() },
         };
-        
+
         public void Add(Shape shape)
         {
             if (shapes.Contains(shape))
@@ -60,8 +61,27 @@ namespace vsite.pood.MyDrawing.Model
         public void Draw(IGraphics graphics)
         {
             //Draw all shapes in selection
+            foreach(IDrawable shape in shapes)
+            {
+                shape.Draw(graphics);
+            }
+            var bounds = BoundingRectangle;
+            bounds.Inflate(ResizeHandle.Size, ResizeHandle.Size);
             //arrange handles 
             //Draw handles
         }
+        public RectangleF BoundingRectangle
+        {
+            get
+            {
+                if(shapes.Count == 0)
+                {
+                    return RectangleF.Empty;
+                }
+                var bounds = shapes.Select(s => s.BoundingRectangle);
+                return bounds.Aggregate((r1, r2) => RectangleF.Union(r1, r2));
+            }
+        }
+
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace vsite.pood.MyDrawing.Model
 {
-    public class Rectangle : Shape, IDrawable, IMoveable
+    public class Rectangle : Shape, IDrawable, IMoveable, IBounding
     {
         public float Left { get; private set; }
         public float Top { get; private set; }
@@ -20,6 +21,8 @@ namespace vsite.pood.MyDrawing.Model
             Width = width;
             Height = height;
         }
+        public override RectangleF BoundingRectangle => new RectangleF(Left, Top, Width, Height);
+
 
         public override void Draw(IGraphics graphics)
         {
