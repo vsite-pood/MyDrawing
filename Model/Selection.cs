@@ -67,6 +67,19 @@ namespace vsite.pood.MyDrawing.Model
             }
             var bounds = BoundingRectangle;
             bounds.Inflate(ResizeHandle.Size, ResizeHandle.Size);
+            handles[ResizeDirection.NorthWest].MoveTo(bounds.Left, bounds.Top);
+            handles[ResizeDirection.North].MoveTo(bounds.Left + bounds.Width / 2, bounds.Top);
+            handles[ResizeDirection.NorthEast].MoveTo(bounds.Right, bounds.Top);
+            handles[ResizeDirection.East].MoveTo(bounds.Right, bounds.Top + bounds.Height / 2);
+            handles[ResizeDirection.SouthEast].MoveTo(bounds.Right, bounds.Bottom);
+            handles[ResizeDirection.South].MoveTo(bounds.Left + bounds.Width / 2, bounds.Bottom);
+            handles[ResizeDirection.SouthWest].MoveTo(bounds.Left, bounds.Bottom);
+            handles[ResizeDirection.West].MoveTo(bounds.Left, bounds.Top + bounds.Height / 2);
+
+            foreach(var item in handles)
+            {
+                graphics.DrawHandle(item.Value);
+            }
             //arrange handles 
             //Draw handles
         }
