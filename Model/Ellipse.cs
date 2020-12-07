@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Ellipse : Shape, IDrawable, IMovable, IResizeble
+    public class Ellipse : Shape, IDrawable, IMovable, IResizeble, IBounding
     {
         public Ellipse(float left, float top, float width, float height)
         {
@@ -20,6 +21,9 @@ namespace Vsite.POOD.MyDrowing.Model
         public float Top{ get; private set; }
         public float Width{ get; private set; }
         public float Height { get; private set; }
+
+        public override RectangleF BoundingRectangle => new RectangleF(Left,Top,Width,Height);
+
         public override void Draw(IGraphics graphics)
         {
             graphics.DrawEllipse(this);

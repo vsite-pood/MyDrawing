@@ -49,8 +49,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SelectionTest.cs" />
     <Compile Include="TestDrawing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
