@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using static Vsite.Pood.MyDrawing.Model.IResizeable;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-	public class Ellipse : Shape, IDrawable, IMovable, IResizeable
+	public class Ellipse : Shape, IDrawable, IMovable, IResizeable,IBounding
 	{
 
 		public float Left { get; private set; }
@@ -15,13 +16,15 @@ namespace Vsite.Pood.MyDrawing.Model
 		public float Width { get; private set; }
 		public float Height { get; private set; }
 
+		public override RectangleF BoundingRectangle => new RectangleF(Left,Top,Width,Height);
+
 		public Ellipse(float left, float top, float width, float height)
 		{
-			this.Left = left;
-			this.Top = top;
-			this.Width = width;
-			this.Width = width;
-			this.Height = height;
+			Left = left;
+			Top = top;
+			Width = width;
+			Width = width;
+			Height = height;
 		}
 
 		public override void Draw(IGraphics graphics)
