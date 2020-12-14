@@ -56,11 +56,16 @@
     <Compile Include="TestDrawing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testHittable.cs" />
+    <Compile Include="TestUndoredoStacks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{56ef06c2-1c75-4712-9529-e197b34ca6a8}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{2b27c714-ddb7-4ee7-bdb7-7107406655ae}</Project>
       <Name>Model</Name>
