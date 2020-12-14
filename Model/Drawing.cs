@@ -9,6 +9,7 @@ namespace Vsite.Pood.MyDrawing.Model
     public class Drawing : IDrawable
     {
         private List<Shape> shapes = new List<Shape>();
+        public readonly Selection Selection = new Selection();
 
         public void Draw(IGraphics graphics)
         {
