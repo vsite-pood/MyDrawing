@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vsite.Pood.MyDrawing.Model;
 
-namespace Viste.Pood.MyDrawing.Controller.Commands
+namespace Viste.Pood.MyDrawing.Controller
 {
     public class MoveSelectionCommand : ICommand
     {

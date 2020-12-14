@@ -17,7 +17,14 @@ namespace Viste.Pood.MyDrawing.Controller
 
         public void AddShape(Shape shape)
         {
-            drawing.Add(shape);
+            ICommand command = new AddShapeCommand(drawing, shape);
+            command.Execute();
+        }
+
+        public void MoveSelection(float dx, float dy)
+        {
+            ICommand command = new MoveSelectionCommand(drawing.Selection, dx, dy);
+            command.Execute();
         }
     }
 }
