@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vsite.Pood.MyDrawing.Model;
 
-namespace Viste.Pood.MyDrawing.Controller
+namespace Vsite.Pood.MyDrawing.Controller
 {
     public class Controller
     {

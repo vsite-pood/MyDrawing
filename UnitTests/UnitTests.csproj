@@ -54,8 +54,13 @@
     <Compile Include="TestDrawing.cs" />
     <Compile Include="TestSelection.cs" />
     <Compile Include="TestHittable.cs" />
+    <Compile Include="TestUndoRedoStacks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{5cb742e8-af75-45e0-8c6f-7867a14aa340}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{d3a580c2-c104-41db-a2d2-8d0a98cf260c}</Project>
       <Name>Model</Name>
