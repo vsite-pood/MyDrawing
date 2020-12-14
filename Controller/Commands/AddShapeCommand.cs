@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Vsite.Pood.MyDrawing.Model;
 
-namespace Vsite.Pood.MyDrawing.Controller.Commands
+namespace Vsite.Pood.MyDrawing.Controller
 {
 	public class AddShapeCommand : ICommand
 	{

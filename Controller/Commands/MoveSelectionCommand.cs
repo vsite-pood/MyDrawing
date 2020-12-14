@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using Vsite.Pood.MyDrawing.Model;
 
-namespace Vsite.Pood.MyDrawing.Controller.Commands
+namespace Vsite.Pood.MyDrawing.Controller
 {
 	public class MoveSelectionCommand : ICommand
 	{
 		private Selection selection;
 		float dx;
 		float dy;
-		public MoveSelectionCommand(Selection selection, float dx,float dy)
+		public MoveSelectionCommand(Selection selection, float dx, float dy)
 		{
 			this.selection = selection;
 			this.dx = dx;

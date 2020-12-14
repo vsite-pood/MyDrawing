@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Vsite.Pood.MyDrawing.Controller.Commands
+namespace Vsite.Pood.MyDrawing.Controller
 {
 	public interface ICommand
 	{

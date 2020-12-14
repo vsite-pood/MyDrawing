@@ -6,31 +6,33 @@ using System.Threading.Tasks;
 
 namespace Vsite.Pood.MyDrawing.Model
 {
-    public class Drawing : IDrawable
-    {
-        private List<Shape> shapes = new List<Shape>();
-        public void Draw(IGraphics graphics)
-        {
-            foreach (var shape in shapes)
-                shape.Draw(graphics);
-        }
+	public class Drawing : IDrawable
+	{
+		private List<Shape> shapes = new List<Shape>();
+		public readonly Selection Selection = new Selection();
 
-        public void Add(Shape shape)
-        {
-            shapes.Add(shape);
-        }
-        public void Remove(Shape shape)
-        {
-            shapes.Remove(shape);
-        }
-        public void Clear()
-        {
-            shapes.Clear();
-        }
+		public void Draw(IGraphics graphics)
+		{
+			foreach ( var shape in shapes )
+				shape.Draw( graphics );
+		}
 
-        public IEnumerable<Shape> Shapes
-        {
-            get { return shapes; }
-        }
-    }
+		public void Add(Shape shape)
+		{
+			shapes.Add( shape );
+		}
+		public void Remove(Shape shape)
+		{
+			shapes.Remove( shape );
+		}
+		public void Clear()
+		{
+			shapes.Clear();
+		}
+
+		public IEnumerable<Shape> Shapes
+		{
+			get { return shapes; }
+		}
+	}
 }
