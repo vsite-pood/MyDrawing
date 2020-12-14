@@ -3,7 +3,7 @@ using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Vsite.POOD.MyDrowing.Model;
 
-namespace Vsite.POOD.MyDrowing.UnitTests
+namespace Vsite.Pood.MyDrawing.UnitTests
 {
     [TestClass]
     public class SelectionTest
@@ -14,36 +14,35 @@ namespace Vsite.POOD.MyDrowing.UnitTests
             Selection sel = new Selection();
             Assert.IsTrue(sel.BoundingRectangle == RectangleF.Empty);
         }
-
         [TestMethod]
-        public void BoundingRectangleForSelectionWithSingleIsIdenticalToItsBoundingRectangle()
+        public void BoundingRectangleForSingleShapeIsIdenticalToItsBoundingRectangle()
         {
             Selection sel = new Selection();
-            Shape rect = new Model.Rectangle(10, 20, 100, 50);
-            sel.Add(rect);
-            Assert.IsTrue(sel.BoundingRectangle == rect.BoundingRectangle);
+            Shape s = new POOD.MyDrowing.Model.Rectangle(10, 20, 100, 50);
+            sel.Add(s);
+            Assert.IsTrue(sel.BoundingRectangle == s.BoundingRectangle);
         }
-
         [TestMethod]
-        public void BoundingRectangleForSelectionWithTwoIsIdenticalToItsBoundingRectangle()
+        public void BoundingRectangleForTwoDisplacedShapeIsIdenticalToTheirBoundingRectangle()
         {
             Selection sel = new Selection();
-            Shape rect = new Model.Rectangle(10, 20, 100, 50);
-            sel.Add(rect);
-            Shape ellipse = new Vsite.POOD.MyDrowing.Model.Ellipse(200, 100, 100, 50);
-            sel.Add(ellipse);
-            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10,20,290,130));
+            Shape s = new POOD.MyDrowing.Model.Rectangle(10, 20, 100, 50);
+            Shape f = new POOD.MyDrowing.Model.Ellipse(200, 100, 100, 50);
+            sel.Add(s);
+            sel.Add(f);
+
+            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10, 20, 290, 130));
         }
-
         [TestMethod]
-        public void BoundingRectangleForSelectionWithTwoOverlappingShapesIsIdenticalToItsBoundingRectangle()
+        public void BoundingRectangleForTwoOverlapingShapeIsIdenticalToTheirBoundingRectangle()
         {
             Selection sel = new Selection();
-            Shape rect = new Model.Rectangle(10, 20, 100, 50);
-            sel.Add(rect);
-            Shape ellipse = new Vsite.POOD.MyDrowing.Model.Ellipse(50, 50, 100, 50);
-            sel.Add(ellipse);
-            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10, 20, 140, 180));
+            Shape s = new POOD.MyDrowing.Model.Rectangle(10, 20, 100, 50);
+            Shape f = new POOD.MyDrowing.Model.Ellipse(50, 50, 100, 50);
+            sel.Add(s);
+            sel.Add(f);
+
+            Assert.IsTrue(sel.BoundingRectangle == new RectangleF(10, 20, 140, 80));
         }
     }
 }
