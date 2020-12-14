@@ -9,7 +9,7 @@ namespace Vsite.Pood.MyDrawing.UnitTests
     public class TestUndoRedoStacks
     {
         [TestMethod]
-        public void UndoAndRedoMoveCommandsBetweenRevertsLastCommandAdded()
+        public void UndoAndRedoMoveCommandsBetweenUndoAndRedoStacks()
         {
             UndoRedoStacks stack = new UndoRedoStacks();
             Drawing drawing = new Drawing();
