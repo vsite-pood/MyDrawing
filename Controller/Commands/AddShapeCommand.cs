@@ -18,12 +18,12 @@ namespace Vsite.Pood.MyDrawing.Controller
         }
         public void Execute()
         {
-            
+            drawing.Add(shape);
         }
 
         public void Undo()
         {
-            throw new NotImplementedException();
+            drawing.Remove(shape);
         }
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Commands\AddShapeCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\MoveSelectionCommand.cs" />
+    <Compile Include="Commands\UndoRedoStacks.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
