@@ -24,6 +24,24 @@ namespace Vsite.Pood.MyDrawing.Controller
             undoRedo.Add(command);
         }
 
+        public void AddShapeToSelection(Shape shape)
+        {
+            drawing.Selection.Add(shape);
+        }
+
+        public Shape GetHitShape(float x, float y)
+        {
+            var shape = drawing.GetHitShape(x, y);
+            if (shape == null)
+                ClearSelection();
+            return shape;
+        }
+
+        public void ClearSelection()
+        {
+            drawing.Selection.Clear();
+        }
+
         public void MoveSelection(float dx, float dy)
         {
             ICommand command = new MoveSelectionCommand(drawing.Selection, dx, dy);
