@@ -46,6 +46,7 @@
     <Compile Include="Commands\MoveSelectionCommand.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UndoRedoStacks.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
