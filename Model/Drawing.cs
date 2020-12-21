@@ -35,5 +35,17 @@ namespace Vsite.pood.MyDrawing.Model
         {
             get { return shapes; }
         }
+
+        public Shape GetHitShape(float x, float y)
+        {
+            foreach(Shape shape in shapes)
+            {
+                if (shape.Contains(x, y))
+                {
+                    return shape;
+                }
+            }
+            return null;
+        }
     }
 }
