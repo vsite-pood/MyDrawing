@@ -10,7 +10,8 @@ namespace Vsite.Pood.MyDrawing.Controller
 {
     public class Controller
     {
-        protected Drawing drawing;
+        public Drawing drawing;
+
         UndoRedoStacks undoRedo = new UndoRedoStacks();
         public Controller(Drawing drawing) 
         {
