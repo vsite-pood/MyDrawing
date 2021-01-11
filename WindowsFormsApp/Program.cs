@@ -16,6 +16,10 @@ namespace Vsite.Pood.MyDrawing.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Model.Drawing drawing = new Model.Drawing();
+            WinFormsController controller = new WinFormsController(drawing);
+            DrawingView view = new DrawingView(controller);
+
             Application.Run(new Form1());
         }
     }
