@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace Vsite.Pood.MyDrawing.WinForms
 {
-	public partial class Form1 : Form
+	partial class Form1 : Form
 	{
 		public Form1()
 		{
 			InitializeComponent();
 		}
+        public Form1(DrawingView view)
+        {
+			InitializeComponent();
+        }
 	}
 }

@@ -8,6 +8,11 @@ namespace Vsite.Pood.MyDrawing.Model
 {
 	public class Drawing : IDrawable
 	{
+		public event EventHandler ModelChanged;
+		protected virtual void onModelChanged(EventArgs e) 
+		{
+            ModelChanged?.Invoke(this, EventArgs.Empty);
+        }
 		private List<Shape> shapes = new List<Shape>();
 		public readonly Selection Selection = new Selection();
 
@@ -20,14 +25,17 @@ namespace Vsite.Pood.MyDrawing.Model
 		public void Add(Shape shape)
 		{
 			shapes.Add( shape );
+			onModelChanged(EventArgs.Empty);
 		}
 		public void Remove(Shape shape)
 		{
 			shapes.Remove( shape );
+			onModelChanged(EventArgs.Empty);
 		}
 		public void Clear()
 		{
 			shapes.Clear();
+			onModelChanged(EventArgs.Empty);
 		}
 
 		public IEnumerable<Shape> Shapes
