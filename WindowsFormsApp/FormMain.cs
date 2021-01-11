@@ -10,9 +10,13 @@ using System.Windows.Forms;
 
 namespace Vsite.POOD.MyDrowing.WinForms
 {
-    public partial class FormMain : Form
+    partial class FormMain : Form
     {
         public FormMain()
+        {
+            InitializeComponent();
+        }
+        public FormMain(DrawingView view) 
         {
             InitializeComponent();
         }

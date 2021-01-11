@@ -9,7 +9,7 @@ namespace Vsite.POOD.MyDrowing.Controller
 {
 	public class Controller
 	{
-		protected readonly Drawing drawing;
+		public readonly Drawing drawing;
 		UndoRedoStacks undoRedo = new UndoRedoStacks();
 
 		public Controller(Drawing drawing)
