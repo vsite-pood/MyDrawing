@@ -23,7 +23,7 @@ namespace Vsite.Pood.MyDrawing.Controller
 
         public void Undo()
         {
-            throw new NotImplementedException();
+            drawing.Remove(shape);
         }
     }
 }
