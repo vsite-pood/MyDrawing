@@ -6,23 +6,43 @@ using System.Threading.Tasks;
 
 namespace Vsite.POOD.MyDrowing.Model
 {
-    public class Drawing : IDrawable
-    {
-        private List<Shape> shapes = new List<Shape>();
-        public readonly Selection Selection = new Selection();
+	public class Drawing : IDrawable
+	{
+		private List<Shape> shapes = new List<Shape>();
+		public readonly Selection Selection = new Selection();
 
-        public void Draw(IGraphics graphics)
-        {
-            foreach  (Shape element in shapes)
-            {
-                element.Draw(graphics);
-            }
-        }
+		public void Draw(IGraphics graphics)
+		{
+			foreach (var shape in shapes)
+				shape.Draw(graphics);
+		}
 
-        public void Add(Shape s) => shapes.Add(s);
-        public void Remove(Shape s) => shapes.Remove(s);
-        public void Clear() => shapes.Clear();
+		public void Add(Shape shape)
+		{
+			shapes.Add(shape);
+		}
+		public void Remove(Shape shape)
+		{
+			shapes.Remove(shape);
+		}
+		public void Clear()
+		{
+			shapes.Clear();
+		}
 
-        public IEnumerable<Shape> Shapes { get { return shapes; } }
-    }
+		public IEnumerable<Shape> Shapes
+		{
+			get { return shapes; }
+		}
+		public Shape GetHitShape(float x, float y)
+		{
+			foreach (Shape shape in shapes)
+			{
+				if (shape.Contains(x, y))
+					return shape;
+
+			}
+			return null;
+		}
+	}
 }
