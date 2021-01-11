@@ -12,6 +12,19 @@ namespace Vsite.Pood.MyDrawing.WinForms
         public DrawingView(WinFormsController controller)
         {
             this.controller = controller;
+            controller.drawing.ModelChanged += DrawingModelChanged;
+        }
+
+        private void DrawingModelChanged(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
+            WinGraphics graphics = new WinGraphics(pe.Graphics);
+            controller.drawing.Draw(graphics)
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
