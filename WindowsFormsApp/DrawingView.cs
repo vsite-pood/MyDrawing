@@ -9,7 +9,8 @@ namespace Vsite.POOD.MyDrowing.WinForms
 {
 	class DrawingView : PictureBox
 	{
-		private WinFormsController controller;
+		public event EventHandler ModelChanged;
+		public readonly WinFormsController controller;
 		public DrawingView(WinFormsController controller)
 		{
 			this.controller = controller;
@@ -19,29 +20,28 @@ namespace Vsite.POOD.MyDrowing.WinForms
         private void DrawingModelChanged(object sender, EventArgs e)
         {
 			Invalidate();
+			ModelChanged?.Invoke(this, EventArgs.Empty);
         }
-
         protected override void OnPaint(PaintEventArgs pe)
         {
-            base.OnPaint(pe);
-			WinGraphics graphics = new WinGraphics(pe.Graphics);
-			controller.drawing.Draw(graphics);
-        }
+			base.OnPaint(pe);
+			controller.drawing.Draw(new WinGraphics(pe.Graphics));
+		}
 
         protected override void OnMouseDown(MouseEventArgs e)
 		{
-			base.OnMouseDown(e);
-			controller.OnMouseDown(e);
+			base.OnMouseDown( e );
+			controller.OnMouseDown( e );
 		}
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
-			base.OnMouseMove(e);
-			controller.OnMouseMove(e);
+			base.OnMouseMove( e );
+			controller.OnMouseMove( e );
 		}
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
-			base.OnMouseUp(e);
-			controller.OnMouseUp(e);
+			base.OnMouseUp( e );
+			controller.OnMouseUp( e );
 		}
 	}
 }
