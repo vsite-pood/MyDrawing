@@ -26,7 +26,7 @@ namespace Vsite.Pood.MyDrawing.WinForms
         
         public void DrawRectangle(Rectangle rect)
         {
-            graphics.DrawRectangle(System.Drawing.Pens.Azure, rect.Left, rect.Top, rect.Width, rect.Height);
+            graphics.DrawRectangle(System.Drawing.Pens.Black, rect.Left, rect.Top, rect.Width, rect.Height);
         }
     }
 }

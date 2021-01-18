@@ -53,13 +53,11 @@ namespace Vsite.Pood.MyDrawing.WinForms
             switch (ClickMode)
             {
                 case MouseClickMode.InsertEllipse:
-                    drawing.Add(new Ellipse(x, y, width, height));
+                    AddShape(new Ellipse(x, y, width, height));
                     break;
                 case MouseClickMode.InsertRectangle:
-                    drawing.Add(new pood.MyDrawing.Model.Rectangle(x, y, width, height));
+                    AddShape(new pood.MyDrawing.Model.Rectangle(x, y, width, height));
                     break;
-
-
             }
         }
     }
