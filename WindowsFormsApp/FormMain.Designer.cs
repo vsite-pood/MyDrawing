@@ -40,9 +40,7 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip2
@@ -66,12 +64,14 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             // 
             // toolStripButtonSelection
             // 
+            this.toolStripButtonSelection.CheckOnClick = true;
             this.toolStripButtonSelection.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonSelection.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSelection.Image")));
             this.toolStripButtonSelection.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSelection.Name = "toolStripButtonSelection";
             this.toolStripButtonSelection.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonSelection.Text = "Selection";
+            this.toolStripButtonSelection.Click += new System.EventHandler(this.toolStripButtonMode_Click);
             // 
             // toolStripSeparator1
             // 
@@ -80,12 +80,14 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             // 
             // toolStripButtonInsertRectangle
             // 
+            this.toolStripButtonInsertRectangle.CheckOnClick = true;
             this.toolStripButtonInsertRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonInsertRectangle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInsertRectangle.Image")));
             this.toolStripButtonInsertRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonInsertRectangle.Name = "toolStripButtonInsertRectangle";
             this.toolStripButtonInsertRectangle.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonInsertRectangle.Text = "InsertRectangle";
+            this.toolStripButtonInsertRectangle.Click += new System.EventHandler(this.toolStripButtonMode_Click);
             // 
             // toolStripSeparator2
             // 
@@ -94,12 +96,14 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             // 
             // toolStripButtonInsertEllipse
             // 
+            this.toolStripButtonInsertEllipse.CheckOnClick = true;
             this.toolStripButtonInsertEllipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonInsertEllipse.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInsertEllipse.Image")));
             this.toolStripButtonInsertEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonInsertEllipse.Name = "toolStripButtonInsertEllipse";
             this.toolStripButtonInsertEllipse.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonInsertEllipse.Text = "InsertEllipse";
+            this.toolStripButtonInsertEllipse.Click += new System.EventHandler(this.toolStripButtonMode_Click);
             // 
             // toolStripSeparator3
             // 
@@ -109,11 +113,13 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             // toolStripButtonUndo
             // 
             this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.Enabled = false;
             this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
             this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonUndo.Name = "toolStripButtonUndo";
             this.toolStripButtonUndo.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonUndo.Text = "Undo";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
             // 
             // toolStripSeparator4
             // 
@@ -123,35 +129,24 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
             // toolStripButtonRedo
             // 
             this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRedo.Enabled = false;
             this.toolStripButtonRedo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRedo.Image")));
             this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRedo.Name = "toolStripButtonRedo";
             this.toolStripButtonRedo.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonRedo.Text = "Redo";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1217, 479);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 506);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip2);
             this.Name = "Form1";
             this.Text = "My Drawing";
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +164,6 @@ namespace Vsite.Pood.MyDrawing.WindowsForms
         private System.Windows.Forms.ToolStripButton toolStripButtonUndo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButtonRedo;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
