@@ -21,8 +21,8 @@ namespace Vsite.Pood.MyDrawing.Controller
         public void AddShape(Shape shape)
         {
             ICommand command = new AddShapeCommand(drawing, shape);
-            command.Execute();
             undoRedo.Add(command);
+            command.Execute();
         }
 
         public void AddShapeToSelection(Shape shape)
@@ -46,8 +46,8 @@ namespace Vsite.Pood.MyDrawing.Controller
         public void MoveSelection(float dx, float dy)
         {
             ICommand command = new MoveSelectionCommand(drawing.Selection, dx, dy);
-            command.Execute();
             undoRedo.Add(command);
+            command.Execute();
         }
 
         public void Undo()

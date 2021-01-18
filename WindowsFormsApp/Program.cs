@@ -19,8 +19,8 @@ namespace Vsite.Pood.MyDrawing.WinForms
             Model.Drawing drawing = new Model.Drawing();
             WinFormsController controller = new WinFormsController(drawing);
             DrawingView view = new DrawingView(controller);
-
-            Application.Run(new Form1());
+            Form1 form = new Form1(view);
+            Application.Run(form);
         }
     }
 }

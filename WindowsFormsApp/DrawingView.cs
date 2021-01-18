@@ -9,6 +9,7 @@ namespace Vsite.Pood.MyDrawing.WinForms
 {
     class DrawingView : PictureBox
     {
+        public event EventHandler ModelChanged;
         public DrawingView(WinFormsController controller)
         {
             this.controller = controller;
@@ -18,6 +19,7 @@ namespace Vsite.Pood.MyDrawing.WinForms
         private void DrawingModelChanged(object sender, EventArgs e)
         {
             Invalidate();
+            ModelChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -45,6 +47,6 @@ namespace Vsite.Pood.MyDrawing.WinForms
             controller.OnMouseUp(e);
         }
 
-        private WinFormsController controller;
+        public readonly WinFormsController controller;
     }
 }
