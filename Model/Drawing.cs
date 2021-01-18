@@ -12,7 +12,7 @@ namespace Vsite.Pood.MyDrawing.Model
 
         protected virtual void OnModelChanged(EventArgs e)
         {
-            ModelChanged?.Invoke(this, e.Empty);
+            ModelChanged?.Invoke(this, e);
         }
 
         private List<Shape> shapes = new List<Shape>();

@@ -48,10 +48,10 @@ namespace Vsite.Pood.MyDrawing.WinForms
             switch (ClickMode)
             {
                 case MouseClickMode.InsertEllipse:
-                    drawing.Add(new Model.Ellipse(x, y, width, height));
+                    AddShape(new Model.Ellipse(x, y, width, height));
                     break;
                 case MouseClickMode.InsertRectangle:
-                    drawing.Add(new Model.Rectangle(x, y, width, height));
+                    AddShape(new Model.Rectangle(x, y, width, height));
                     break;
 
             }
